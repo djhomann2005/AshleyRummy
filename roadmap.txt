@@ -27,6 +27,8 @@ What is Needed:
     -need to stay organized in front of the player who played them as these count for points
 
 6. Logic Needs:
+    -Shuffle cards at start of game - random shuffle
+    -Deal each player 7 cards
     -In order to complete a turn, a player must 1) draw a card either from the draw deck or the discard deck and 
      2) dicard a card from their hand.
     -Players can only draw one card from the draw deck, and it must be the top card
@@ -44,3 +46,8 @@ What is Needed:
         -Points played - Points in Hand = Round Score
     -If no player has reached 300 points, start a new round
         -First player to 300 points wins the game
+
+7. HTML page to display card game
+    -JavaScript will need to update this page to reflect changes
+    -should only display the faces of the players cards while opponents cards show the backs
+    -need to be able to see how many cards are in everyones hand
