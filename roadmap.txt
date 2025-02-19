@@ -1,0 +1,46 @@
+Overall Concept:
+Create a card game based on the game of Rummy, but using the rules that Ashley demands to play by (no triples).
+
+What is Needed:
+1. Something to represent a card
+    -each card will have a suit and a rank
+    -example: 5 of Diamonds = 5d
+
+2. Something to hold the deck of cards available to be drawn
+    -needs to track which cards are in the deck and in which order
+    -need to be able to shuffle this at the beginning of a game
+
+3. Somthing to hold the discard deck
+    -needs to track which cards are in the deck and in which order
+    -players can take from discard deck, so needs to be displayed face up so all cards can be seen
+    -can draw the top card of the discard deck freely with no consequences
+    -if player takes more than the top card, they must immediately be able to play the last card they pick up
+
+4. Something to hold each players hand
+    -need to track which cards are in the hand
+    -for the player, need to be able to rearrange hand to display sensibly
+
+5. Need to be able to display sets of cards that players have played
+    -minimum run of 3 cards to be able to play
+    -once played, need to be visible to everyone
+    -once played, anyone can play single or more cards on the end of a run
+    -need to stay organized in front of the player who played them as these count for points
+
+6. Logic Needs:
+    -In order to complete a turn, a player must 1) draw a card either from the draw deck or the discard deck and 
+     2) dicard a card from their hand.
+    -Players can only draw one card from the draw deck, and it must be the top card
+    -Players can draw one card from the dicsard deck with no requirement to play
+    -If players want to draw more than one card from the discard deck, they must be able to play the last card immediately
+    -Rearrange hands to display in rank order organized by suit
+    -Check if cards meet the requirement to be played for points
+        -If the card(s) would directly continue a run that has already been played, they can be played
+        -If not, there must be 3+ cards in a row (by rank) of the same suit in order to be played
+    -If someone discards a card that can immediately be played, anyone can call Rummy and immediately play the card
+    -At the end of each round, total points for each player
+        -Ace = 15 pts, KQJ10 = 10 pts, 98765432 = 5 pts
+        -Cards played count for positive points
+        -Cards still in hand count for negative points
+        -Points played - Points in Hand = Round Score
+    -If no player has reached 300 points, start a new round
+        -First player to 300 points wins the game
